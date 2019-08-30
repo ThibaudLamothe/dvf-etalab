@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+dash = "*"
+numpy = "*"
+tqdm = "*"
+matplotlib = "*"
+seaborn = "*"
+flask = "*"
+pandas = "==0.24.0"
+plotly = "==3.10.0"
+
+[requires]
+python_version = "3.7"
