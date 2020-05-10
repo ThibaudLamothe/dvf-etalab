@@ -15,4 +15,4 @@ Analyse des données de valeurs foncières mises à disposition par l'état en 2
     
     
 
-# Fonctionnemnet de l'appli Dash
+- ( conda env : dvf)
