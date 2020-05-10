@@ -5,15 +5,14 @@ import numpy as np
 import pandas as pd
 
 import dash
+from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output, State
-
 import plotly.plotly as py
 from plotly import graph_objs as go
 
 from app import app
-from scripts.values import dept_filter, ville_filter_unique, section_filter
+from scripts.values import filter_1, filter_2
 from scripts.values import df_dvf
 
 
@@ -23,22 +22,17 @@ from scripts.values import df_dvf
 
 layout = [
 
-    html.Div(
-        [   
-            dept_filter,
-            ville_filter_unique,
-            section_filter
-        ],
-        className="row",
-        style={"marginBottom": "10"},
-        ),
+
+    # TOP CONTROLS : FILTERS - LINE 1
+    filter_1,
+    filter_2,
 
     html.Div(
         [
             # GRAPH 1
             html.Div(
                 [
-                    dcc.Graph(id='explo_sec')
+                    dcc.Graph(id='dvf_map')
                 ],
                 className='six columns',
                 style={'margin-top': '10'}
@@ -56,11 +50,11 @@ layout = [
 ############################################################################################################################################
 
 
-# GRAPH : COUT REVIENT PAR VEHICULE
-@app.callback(Output('explo_sec', 'figure'),
+# GRAPH : MAP
+@app.callback(Output('dvf_map', 'figure'),
               [Input('model_dropdown', 'value')
                ])
-def explo_sec(model, df=df_dvf):
+def dvf_map(model, df=df_dvf):
     
     df = df[df['dept'].isin(model)]
     granularity ='dept'

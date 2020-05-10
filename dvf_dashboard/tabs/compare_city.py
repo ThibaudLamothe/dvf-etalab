@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-import json
-import math
 import numpy as np
 import pandas as pd
 
-import flask
 import dash
 from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
@@ -12,14 +9,9 @@ import dash_html_components as html
 import plotly.plotly as py
 from plotly import graph_objs as go
 
-
-from app import app, indicator, millify, df_to_table
-from scripts.values import modele_color, dept_filter, ville_filter_multi
-from scripts.df_value import rep
-from scripts import filter_and_compute
-
-df_dvf = rep['df_general']
-
+from app import app
+from scripts.values import dept_filter, ville_filter_multi
+from scripts.values import df_dvf
 
 ##############################################################################
 ##############################################################################

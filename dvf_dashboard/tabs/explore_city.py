@@ -1,26 +1,21 @@
 # -*- coding: utf-8 -*-
-import json
-import math
-import random
-import plotly.plotly as py
+import numpy as np
 import pandas as pd
-import flask
+
 import dash
-from dash.dependencies import Input, Output, State
+
 import dash_core_components as dcc
 import dash_html_components as html
+from dash.dependencies import Input, Output, State
+
 import plotly.plotly as py
-import numpy as np
 from plotly import graph_objs as go
 import plotly.figure_factory as ff
 
-from app import app, indicator, millify, df_to_table
-from scripts import filter_and_compute
-from scripts.values import modele_color, dept_filter, ville_filter_unique
-from scripts.df_value import rep
-
-df_dvf = rep['df_general']
-
+from app import app 
+from scripts import dvf_filter_and_compute as filter_and_compute
+from scripts.values import dept_filter, ville_filter_unique
+from scripts.values import df_dvf
 
 ###########################################################################
 ###########################################################################
