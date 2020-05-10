@@ -4,6 +4,6 @@ __pycache__
 .DS_Store
 .ipynb_checkpoints
 
-# Environment
-Pipfile
-Pipfile.lock
+*.p
+
+requirements_full.txt

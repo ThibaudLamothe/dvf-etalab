@@ -1,6 +1,6 @@
 import pickle
 import pandas as pd
-import dvf_functions
+from scripts import dvf_functions
 
 print('*'*50, ' Loading Start ', '*'*50,)
 #df_dvf = pd.read_csv('/Users/thibaudlamothe/OneDrive - Capgemini/Documents/Data/DVF/data_per_dept/processed_2018/dept_35.csv')

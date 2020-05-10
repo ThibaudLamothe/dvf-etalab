@@ -1,19 +1,16 @@
 # -*- coding: utf-8 -*-
 import flask
-import pandas as pd
-import math
-
 import dash
 from dash.dependencies import Input, Output
 import dash_core_components as dcc
 import dash_html_components as html
-import plotly.plotly as py
-from plotly import graph_objs as go
 
 from app import app, server
-from apps import compare_city, explore_city, explore_section
-from apps import dvf_maps, dvf_sandbox
-import dvf_functions as ldf
+from tabs import compare_city, explore_city, explore_section, dvf_maps, dvf_sandbox
+
+
+import scripts.dvf_functions as ldf
+from scripts.values import *
 
 # Necessary url definition
 css_style_url = 'https://cdn.rawgit.com/plotly/dash-app-stylesheets/2d266c578d2a6e8850ebce48fdb52759b2aef506/stylesheet-oil-and-gas.css'
@@ -53,29 +50,27 @@ app.layout = html.Div(
 
 
         # tabs
-        html.Div([
-
-            dcc.Tabs(
-                id="tabs",
-                style={"height": "20", "verticalAlign": "middle"},
-                children=[
-                    dcc.Tab(id="compare_city",
-                            label="Comparaison  villes", value="compare_city"),
-                    dcc.Tab(id="explore_city",
-                            label="Exploration ville", value="explore_city"),
-                    dcc.Tab(id="explore_section",
-                            label="Exploration section",
-                            value="explore_section"),
-                    dcc.Tab(id="dvf_maps", label="Cartographie",
-                            value="dvf_maps"),
-                    dcc.Tab(id="dvf_sandbox", label="Bac à sable",
-                            value="dvf_sandbox"),
-                ],
-                value="general_tab",
-            )
-
-        ],
-            # className="row ta
+        html.Div(
+            [
+                dcc.Tabs(
+                    id="tabs",
+                    style={"height": "20", "verticalAlign": "middle"},
+                    children=[
+                        dcc.Tab(id="compare_city",
+                                label="Comparaison  villes", value="compare_city"),
+                        dcc.Tab(id="explore_city",
+                                label="Exploration ville", value="explore_city"),
+                        dcc.Tab(id="explore_section",
+                                label="Exploration section",
+                                value="explore_section"),
+                        dcc.Tab(id="dvf_maps", label="Cartographie",
+                                value="dvf_maps"),
+                        dcc.Tab(id="dvf_sandbox", label="Bac à sable",
+                                value="dvf_sandbox"),
+                    ],
+                    value="general_tab",
+                )
+            ],
         ),
 
 
@@ -114,4 +109,4 @@ def render_content(tab):
 
 if __name__ == "__main__":
     app.run_server(debug=True)
-    import df_value as dfv
+    # import df_value as dfv

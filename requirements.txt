@@ -1,0 +1,8 @@
+dash
+numpy
+tqdm
+matplotlib
+seaborn
+flask
+pandas==0.24.0
+plotly==3.10.0

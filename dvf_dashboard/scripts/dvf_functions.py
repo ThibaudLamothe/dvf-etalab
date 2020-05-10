@@ -126,10 +126,10 @@ def preparingData(pick=False):
 
         restitution = {'df_general': df,
                        }
-        pickle.dump(restitution, open("restitution.p", "wb"))
+        pickle.dump(restitution, open("../data/restitution.p", "wb"))
     else:
         print('on charge directement la restitution.')
-        restitution = pickle.load(open("restitution.p", "rb"))
+        restitution = pickle.load(open("../data/restitution.p", "rb"))
     print('restitution ok')
     return restitution
 

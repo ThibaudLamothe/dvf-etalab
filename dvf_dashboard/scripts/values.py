@@ -1,5 +1,5 @@
 import numpy as np
-from df_value import rep
+from scripts.df_value import rep
 
 import dash
 from dash.dependencies import Input, Output, State

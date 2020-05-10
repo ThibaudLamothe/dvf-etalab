@@ -15,9 +15,9 @@ from plotly import graph_objs as go
 import plotly.figure_factory as ff
 
 from app import app, indicator, millify, df_to_table
-from . import filter_and_compute
-from apps.values import modele_color, dept_filter, ville_filter_unique
-from df_value import rep
+from scripts import filter_and_compute
+from scripts.values import modele_color, dept_filter, ville_filter_unique
+from scripts.df_value import rep
 
 df_dvf = rep['df_general']
 

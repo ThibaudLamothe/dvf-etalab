@@ -13,9 +13,9 @@ import numpy as np
 from plotly import graph_objs as go
 
 from app import app, indicator, millify, df_to_table
-from . import filter_and_compute
-from apps.values import modele_color, filter_1, filter_2 #, test_d
-from df_value import rep
+from scripts import filter_and_compute
+from scripts.values import modele_color, filter_1, filter_2 #, test_d
+from scripts.df_value import rep
 
 df_dvf = rep['df_general']
 
